@@ -19,12 +19,12 @@ export const useCreateProduct = () => {
   const qc = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: Partial<Product>) => {
+    mutationFn: async (data: FormData) => {
       const res = await fetch(`${BASE_URL}/items`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: data,
       });
+
       if (!res.ok) throw new Error("Create failed");
       return res.json();
     },

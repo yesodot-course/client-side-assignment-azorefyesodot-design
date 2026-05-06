@@ -46,3 +46,4 @@ export const useSupplierSpending = () =>
     queryFn: () =>
       fetch(`${BASE}/supplier/spending`).then((r) => r.json()),
   });
+  
