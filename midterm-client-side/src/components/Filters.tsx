@@ -47,7 +47,7 @@ export default function Filters({
   setMaxPrice,
 }: FiltersProps) {
   const categories = [...new Set(products.map((p) => p.category))];
-  const suppliers = [...new Set(products.map((p) => p.supplier))];
+  const suppliers = [...new Set(products.map((p) => p.supplierId))];
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
